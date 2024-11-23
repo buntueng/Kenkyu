@@ -94,9 +94,9 @@ if glcm_homogeneity_flag:
         for file in files:
             if file.endswith(".bmp"):
                 image = cv2.imread(os.path.join(root, file))
-                glcm_R,glcm_energy_R = fast_glcm_homogeneity(image[:, :, 0])
-                glcm_G,glcm_energy_G  = fast_glcm_homogeneity(image[:, :, 1])
-                glcm_B,glcm_energy_B  = fast_glcm_homogeneity(image[:, :, 2])
+                glcm_R = fast_glcm_homogeneity(image[:, :, 0])
+                glcm_G  = fast_glcm_homogeneity(image[:, :, 1])
+                glcm_B  = fast_glcm_homogeneity(image[:, :, 2])
                 Homogeneity_glcm = np.dstack((glcm_R, glcm_G, glcm_B)) * 255
                 Homogeneity_glcm = Homogeneity_glcm.astype(np.uint8)
                 # check subdirectory is exist or not
@@ -161,9 +161,9 @@ if glcm_dissimilarity_flag:
         for file in files:
             if file.endswith(".bmp"):
                 image = cv2.imread(os.path.join(root, file))
-                glcm_R,glcm_energy_R = fast_glcm_dissimilarity(image[:, :, 0])
-                glcm_G,glcm_energy_G  = fast_glcm_dissimilarity(image[:, :, 1])
-                glcm_B,glcm_energy_B  = fast_glcm_dissimilarity(image[:, :, 2])
+                glcm_R = fast_glcm_dissimilarity(image[:, :, 0])
+                glcm_G = fast_glcm_dissimilarity(image[:, :, 1])
+                glcm_B = fast_glcm_dissimilarity(image[:, :, 2])
                 Dissimilarity_glcm = np.dstack((glcm_R, glcm_G, glcm_B)) * 255
                 Dissimilarity_glcm = Dissimilarity_glcm.astype(np.uint8)
                 # check subdirectory is exist or not
@@ -183,9 +183,9 @@ if glcm_contras_flag:
         for file in files:
             if file.endswith(".bmp"):
                 image = cv2.imread(os.path.join(root, file))
-                glcm_R,glcm_energy_R = fast_glcm_contrast(image[:, :, 0])
-                glcm_G,glcm_energy_G  = fast_glcm_contrast(image[:, :, 1])
-                glcm_B,glcm_energy_B  = fast_glcm_contrast(image[:, :, 2])
+                glcm_R = fast_glcm_contrast(image[:, :, 0])
+                glcm_G  = fast_glcm_contrast(image[:, :, 1])
+                glcm_B  = fast_glcm_contrast(image[:, :, 2])
                 CONTRAS_glcm = np.dstack((glcm_R, glcm_G, glcm_B)) * 255
                 CONTRAS_glcm = CONTRAS_glcm.astype(np.uint8)
                 # check subdirectory is exist or not
