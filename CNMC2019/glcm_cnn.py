@@ -206,7 +206,7 @@ for fold, (train_idx, val_idx) in enumerate(kf.split(dataset)):
     
     # save processing time to txt file 
     with open(os.path.join(output_dir,"processing_time.txt"), "a+") as f:
-        f.write(f"fold_{fold + 1} \t {processing_time}")
+        f.write(f"fold_{fold + 1} \t {processing_time}\n")
 
     # Save fold results
     history_path = os.path.join(output_dir, f"fold_{fold + 1}_history.csv")
